@@ -1,0 +1,62 @@
+/**
+ * @name gloss
+ * @author jmarxwell
+ * @version 0.0.1
+ * @description main customisation aspects relevant to casual ricers
+ * @source https://github.com/jmarxwell/discord_gloss
+*/
+
+
+
+
+:root {
+	--font-primary: atkinson hyperlegible;
+	--corner-radius: 0;
+	--scrollbar-thickness: 6px;
+}
+
+
+
+
+
+
+:root {
+	--radius-xs: var(--corner-radius);
+	--radius-sm: var(--corner-radius);
+	--radius-md: var(--corner-radius);
+	--radius-lg: var(--corner-radius);
+	--radius-xl: var(--corner-radius);
+	--radius-xxl: var(--corner-radius);
+	--radius-round: var(--corner-radius);
+}
+
+
+/* please for the love of whomever standardise your styling ffs */
+button,
+[class*="item"],
+[data-list-id="people"] [role="listitem"],
+[class*="scrollableContainer"],
+[class*="channelTextArea"],
+[role="list"] [role="listitem"],
+[role="tabpanel"][id="online-tab"] [class*="searchBar"],
+[class*="popoverReactionHoverBar"],
+[class*="button"],
+[class*="menu"],
+[class*="reaction"],
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track,
+[class*="visualMediaItemContainer"],
+[class*="oneByOneGrid"],
+[class*="mosaicItem"],
+[class*="imageWrapper"],
+[class*="input"],
+[class*="swatch"] {
+	border-radius: var(--corner-radius) !important;
+}
+
+
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+	max-width: 6px !important;
+	padding: 0 !important;
+	border: none !important;
+}
+

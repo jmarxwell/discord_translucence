@@ -1,0 +1,69 @@
+/**
+ * @name window decorations
+ * @author jmarxwell
+ * @version 0.0.1
+ * @description
+ * @source https://github.com/jmarxwell/
+*/
+
+
+
+.visual-refresh {
+	--custom-app-top-bar-height: 0;
+}
+
+
+[class*="bar"][data-windows="true"] {
+	/*transform: translateY(-100%);*/
+	/*position: absolute;*/
+	height: 0;
+	
+	
+	& > :not([class*="trailing"]) {
+		visibility: hidden;
+	}
+	
+	& > [class*="trailing"] {
+		
+		
+		& > *:not([class*="winButtons"]) {
+			display: none;
+		}
+		
+	
+		& > [class*="winButtons"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: var(--custom-channel-header-height);
+			
+			background: var(--background-base-lower);
+			
+			
+			& > [class*="winButton"] {
+				height: var(--custom-channel-header-height);
+				width: auto;
+				aspect-ratio: 1/1;
+			}
+		}
+	}
+}
+
+
+:is(
+	[class*="chat"] > [class*="subtitleContainer"],
+	section[role="navigation"] > div > [class*="toolbar"]
+) {
+	
+	/* nasty bodge to get window decorations incorporated into the open chat's top bar */
+	margin-right: calc(
+		(var(--custom-channel-header-height) + var(--space-4))
+	* 3);
+    
+	/* whole top bar should support dragging */
+	-webkit-app-region: drag;
+}
+
+
+
+
