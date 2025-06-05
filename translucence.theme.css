@@ -1,0 +1,78 @@
+/**
+ * @name translucence
+ * @author jmarxwell
+ * @version 0.1.0
+ * @description
+ * @source https://github.com/jmarxwell/discord_translucence
+*/
+
+
+
+:root, .theme-dark, .visual-refresh.theme-darker {
+	--background-base-lowest: transparent !important;
+	--background-base-lower: transparent !important;
+	--background-base-low: transparent;
+	--bg-base-tertiary: transparent !important;
+	
+	--app-border-frame: transparent;
+	
+	/*--chat-background-default: var(--button-secondary-background);*/
+	--chat-background-default: var(--input-background);
+}
+
+
+
+[class*="tutorialContainer"] svg [class*="childWrapper"] {
+	background-color: transparent !important;
+}
+
+[data-list-id="people"] > div > [class*="peopleListItem"] {
+	border: none;
+}
+
+
+:is(
+    [role=listitem],
+    [class*="listItem"] [class*="blobContainer"],
+    [class*="channelTextArea"],
+    button[type="button"],
+    [class*="customItem"],
+    [class*="swatch"]
+) {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* 1px or 2px ? */
+        border: 2px solid transparent;
+        box-sizing: border-box;
+        /* transition: border-color 75ms ease-out; */
+        pointer-events: none;
+    }
+
+    &:hover::after {
+        border-color: gray;
+    }
+}
+
+
+
+[class*="channelTextArea"] {
+	border: 1px solid var(--input-border);
+}
+
+
+
+[class*="searchBar"], section[class*="title"], section[role="navigation"] {
+	border: none !important;
+}
+
+
+[class*="sectionDivider"] {
+	visibility: hidden;
+}
